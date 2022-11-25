@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@600&family=Prompt:wght@900&family=Style+Script&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+:root{
+    --some-bg: #282a3a #404258 #474e68 #50577a #6b728e;
+    --primary-bg: #191e39;
+    --secondary-bg: #404258;
+    --primary-text: #bfd3e7;
+    --secondary-text: #6b728e;
+    --special-bg: #78ffd6;
+}
+body{
+    background: var(--primary-bg);
+    color: var(--primary-text);
+    min-height: 200vh;
+}
+.button{
+    background: dodgerblue;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.heading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+}
+.heading span{
+    position: absolute;
+    top: -14px; left: -15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: #50577a;
+    z-index: -1;
+    opacity: .8;
+}
+.navbar{
+    position: fixed;
+    top: 0; left: 220px;
+    width: calc(100% - 220px);
+    height: 62px;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.navbar .nav-right{
+    display: flex;
+    align-items: center;
+}
+.navbar .nav-right .profile{
+    margin: 4px 0 0 20px;
+    cursor: pointer;
+}
+.navbar .nav-right .profile img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.sidebar{
+    position: fixed;
+    top: 0; left: 0;
+    width: 220px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(5px);
+}
+.sidebar .side-top{
+    position: absolute;
+    left: 0;
+    width: 220px;
+    height: 62px;
+    line-height: 62px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.sidebar .side-top i{
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+.sidebar .side-top span{
+    font-family: 'Style Script', cursive;
+    font-size: 1.5rem;
+}
+.sidebar .sidebar-wrap{
+    margin: 100px 20px 82px 20px;
+}
+.sidebar-wrap p{
+    margin: 10px 0;
+    color: var(--secondary-text);
+    font-weight: 600;
+}
+.sidebar .sidebar-wrap .side-options{
+    padding: 5px 0;
+    margin: 5px;
+    cursor: pointer;
+    font-size: .9rem;
+    opacity: 0.5;
+}
+.sidebar .sidebar-wrap .side-options i{
+    margin-right: 15px;
+    transition: .1s;
+}
+.sidebar .sidebar-wrap .side-options.active,
+.sidebar .sidebar-wrap .side-options:hover{
+    opacity: 1;
+}
+.sidebar .side-bottom{
+    position: absolute;
+    left: 0; bottom: 20px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--secondary-text);
+}
+.sidebar .side-bottom span{
+    text-align: center;
+    padding: 5px;
+    font-size: .8rem;
+}
+.main{
+    margin-top: 80px;
+    margin-left: 230px;
+    margin-right: 10px;
+}
+.bg-card{
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 10px 10px 20px 10px;
+}
+.slide-image{
+    width: 30rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.slide-image img{
+    width: 100%;
+    border-radius: 12px;
+}
+.trending-wrap .trending-top{
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.trending-wrap .trending-top p{
+    padding: 10px 0px;
+    width: 40vw;
+}
+.trending-wrap .trending-top .tt-right i{
+    margin-right: 10vw;
+    font-size: 5rem;
+    animation: animate 2s linear infinite;
+}
+@keyframes animate {
+    to{
+        transform: rotate(360deg);
+    }
+}
+@media (max-width: 800px) {
+    .navbar{
+        left: 70px;
+        width: calc(100% - 70px);
+    }
+    .sidebar{
+        width: 70px;
+    }
+    .sidebar .side-top{
+        width: 70px;
+    }
+    .sidebar span{
+        display: none;
+    }
+    .sidebar p{
+        display: none;
+    }
+    .sidebar .side-bottom{
+        display: none;
+    }
+    .main{
+        margin-left: 80px;
+    }
+}
+@media (max-width: 650px) {
+    .trending-wrap .trending-top p{
+        width: inherit;
+    }
+    .trending-wrap .trending-top .tt-right{
+        display: none;
+    }
+}
